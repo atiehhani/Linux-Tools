@@ -1,8 +1,11 @@
 ## ps
 process status.<br>
--a = all<br>
--u = user<br>
--x = show proccess that is not attached to your terminal.<br>
+| Option | Description |
+|------|-------------|
+| `-a` | all |
+| `-u` | user |
+| `-x` | show process that is not attached to your terminal |
+
 ```bash
 ps -a -u
 ps -a -u -x
