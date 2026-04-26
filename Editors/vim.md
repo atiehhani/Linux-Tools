@@ -159,84 +159,116 @@ Example:
 `:%s/used/LINUX/gi`
 
 
+## Save the File
 
-## Save the file
-###  just save
-command line enviroment 
-:w = save
-:w new name = save az
-:w /var/test for give location 
+### Just save
+
+| Command | Description |
+|---------|-------------|
+| `:w` | Save the current file |
+| `:w newname` | Save file with a new name (Save As) |
+| `:w /path/file` | Save file to a specific location |
+
+Example:
 ```bash
 :w
 :w new
-: /tmp/tst
+:w /tmp/tst
 ```
-### save and quit
-:wq == ZZ == :x save and quit
-:q! == ZQ quit without save
-:wq! = save and quit but if have not permissin just quit
+
+---
+
+### Save and quit
+
+| Command | Description |
+|---------|-------------|
+| `:wq` | Save and quit |
+| `ZZ` | Save and quit (Normal mode) |
+| `:x` | Save and quit (only if changes were made) |
+| `:q!` | Quit without saving |
+| `ZQ` | Quit without saving (Normal mode) |
+| `:wq!` | Force save and quit (if possible) |
+
+Example:
 ```bash
 :wq
 :q!
 :wq!
 ```
-### just reload file 
-:e! = before saveing, read the file from disk and reload
-```bash
-:e!
-```
+## Reload File
 
-## Tab in vim
-### tab
-```bash
-:tabnew
-:tabnext
-:tabprevious
-:new /PATH/TO/filename
-```
+| Command | Description |
+|---------|-------------|
+| `:e!` | Reload file from disk and discard unsaved changes |
 
-## Diff in vim
-### diffrence two file
-ctrl + ww = switch between files
+---
+
+## Tabs in Vim
+
+| Command | Description |
+|---------|-------------|
+| `:tabnew` | Open a new tab |
+| `:tabnext` | Go to next tab |
+| `:tabprevious` | Go to previous tab |
+| `:new /path/to/file` | Open a file in a new window |
+
+
+
+---
+
+## Diff in Vim
+
+### Compare two files
+
+| Command | Description |
+|---------|-------------|
+| `vimdiff file1 file2` | Open two files in diff mode |
+| `Ctrl + ww` | Switch between windows |
+
+Example:
 ```bash
 vimdiff file1.txt file2.txt
 ```
-### get and put between two files
-dependence your cursor location
+
+### Get / Put changes between files
+
+| Command | Description |
+|---------|-------------|
+| `diffget` | Get changes from the other file |
+| `diffput` | Send changes to the other file |
+
+Example:
 ```bash
 vimdiff file1 file2
 diffput
 diffget
 ```
-## more switch in vim in search
-### for disable case sensitive in search vim 
-after save and quit all of them be cancel  
-:set ic + Enter  
-:set noic + Enter = cancel ic and turn to before one  
-```bash
-:set noic
-```
-### for high light the word in search
-after save and quit all of them be cancel  
-:set hls  
-:set nohls = cancel hls  
-```bash
-:set hls
-```
-### for show number lines in search
-after save and quit all of them be cancel  
-:set number  
-:set nonumber = cancel number  
-```bash
-:set number
-```
-## configure your vim (.vimrc)
-for saving some configuration in vim:  
-```bash
-vim .vimrc = vim ~/.vimrc 
+---
+
+## Search Settings in Vim
+
+| Command | Description |
+|---------|-------------|
+| `:set ic` | Enable case‑insensitive search |
+| `:set noic` | Disable case‑insensitive search |
+| `:set hls` | Highlight search results |
+| `:set nohls` | Disable highlight |
+| `:set number` | Show line numbers |
+| `:set nonumber` | Hide line numbers |
+
+
+## Configure Vim (.vimrc)
+
+Save configuration so Vim loads it automatically.
+
+| Command | Description |
+|---------|-------------|
+| `vim ~/.vimrc` | Open Vim configuration file |
+
+Example configuration:
 :set hls
 :set number
-```
+
 ## install plugin for vim in linux
 vim-plug  
 https://github.com/junegunn/vim-plug  
