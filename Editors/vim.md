@@ -2,7 +2,13 @@
 
 
 ##  Arrow key & mix with number 
-u = undo, j = down, k = up, l = Right, h = left
+| گزینه | توضیح |
+| Option | Description |
+|------|-------------|
+| `-a` | all |
+| `-u` | user |
+| `-x` | show process that is not attached to your terminal |
+
 ```bash
 j 4j
 k 6k
