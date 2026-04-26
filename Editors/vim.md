@@ -1,20 +1,15 @@
 # Vim
 
 
-##  Arrow key & mix with number 
-| گزینه | توضیح |
-| Option | Description |
-|------|-------------|
-| `-a` | all |
-| `-u` | user |
-| `-x` | show process that is not attached to your terminal |
+## Arrow keys mixed with numbers
 
-```bash
-j 4j
-k 6k
-l 2l
-h 5h
-```
+| Command | Description |
+|---------|-------------|
+| `j` / `4j` | Move cursor **down** (4 lines with `4j`) |
+| `k` / `6k` | Move cursor **up** (6 lines with `6k`) |
+| `l` / `2l` | Move cursor **right** (2 characters with `2l`) |
+| `h` / `5h` | Move cursor **left** (5 characters with `5h`) |
+
 
 
 ## For word 
