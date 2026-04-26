@@ -18,183 +18,153 @@ h 5h
 
 
 ## For word 
-###  move one word one word first of word
-```bash
-w 
-3w
-```
-### move one word one word end of word 
-```bash
-e 
-5e
-```
-##  For back 
-```bash
-b
-```
+
+| Command | Description |
+|---------|------------|
+| `w`     | Move to the beginning of next word |
+| `3w`    | Move forward 3 words (to the beginning of each word) |
+| `e`     | Move to the end of next word |
+| `5e`    | Move forward 5 word-ends |
+| `b`     | Move back to the beginning of previous word |
 
 
 ##  For file 
-###  First of file
-```bash
-gg 
-5gg
-``` 
-##  End of file
-shift + g
-```bash
-G
-``` 
+
+| Command | Description                     |
+|---------|---------------------------------|
+| `gg`    | Go to the first line of file    |
+| `5gg`   | Go to line 5 of file            |
+| `G`       | Go to the last line of file  |
+| `Shift+g` | Same as `G` (go to last line)|
 
 
 ## For line
-###  Insert mode 
-i before cursor
-a after cursor
-```bash
-i
-a
-```
-### First of line
-0 or shift + 6
-```bash
-0
-^
-``` 
-### First line & insert mode
-shift + i 
-```bash
-I
-```
-###  End of line
-shift + 4
-```bash
-$
-``` 
-### End line & insert mode
-shift + a 
-```bash
-A
-```
-### New line in Down & insert mode
-o , 10 + o + esc ده تا خط باز میشه
-```bash
 
-9o + esc
-```
-### New line in Up & insert mode
-shift + o 
-```bash
-O
-```
+| Command | Description                |
+|---------|----------------------------|
+| `i`     | Insert before cursor       |
+| `a`     | Insert after cursor        |            |
+| `0`     | Move to beginning of line      |
+| `^`     | Move to first non‑blank char   |
+| `I`     | Go to first non‑blank char & insert |
+| `$`     | Move to end of line    |
+| `A`     | Go to end of line & insert                   |
+| `o`          | Open new line below & enter insert mode          |
+| `10o + Esc`  | Open 10 new lines below                          |
+| `O`     | Open new line above & enter insert mode      |
 
 
-## Cut
-### For cut one charecter
-```bash
-x
-5x
-```
+## Cut / Delete Commands
 
-### For cut one word
-```bash
-dw
-5dw
-```
-### For cut hole text befor cursor in line 
-d + shif + 6
-```bash
-d^
-```
-### For cut hole text after cursor in line 
-d + shif + 4 or shift + d
-```bash
-d$
-D
-```
-### For cut hole line 
 
-```bash
-dd
-5dd
-```
-### For cut a paragraph
+| Command | Description                         |
+|---------|-------------------------------------|
+| `x`     | Delete one character under cursor   |
+| `5x`    | Delete 5 characters                 |
+| `dw`    | Delete one word                     |
+| `5dw`   | Delete 5 words                      |
+| `d^`    | Delete from cursor to first non‑blank char |
+| `d$`    | Delete from cursor to end of line         |
+| `D`     | Same as `d$` (delete until end of line)   |
+| `dd`    | Delete current line              |
+| `5dd`   | Delete 5 lines                   |
+| `dap`   | Delete around paragraph (whole paragraph) |
 
-```bash
-dap
-```
 
-## Copy and Paste
-### Copy and Paste one line 
-copy= yy paste= p
-```bash
-yy
-p
-```
+## Copy & Paste (lines)
 
-### Copy and Paste many lines after next line
-```bash
-2yy
-p
-```
+| Command | Description                |
+|---------|----------------------------|
+| `yy`    | Copy (yank) current line   |
+| `p`     | Paste after current line   |
+| `2yy`   | Copy (yank) 2 lines starting from current    |
+| `p`     | Paste copied lines *after* current line      |
 
-### Copy and Paste many lines before next line
-2yy shift + p
-```bash
-2yy
-P
-```
 
-## Select many lines and write or delete one or more character
+## Visual Block (Edit multiple lines)
 
-```bash
-ctrl + v 
-```
-(visual Block)
-with j or arrow key go down in line 
-```bash
-shift + i
-```
-write comment (like # or //)
-then exec **ESC** as a result execute on all lines.
+| Command | Description |
+|--------|-------------|
+| `Ctrl + v` | Enter **Visual Block** mode to select a vertical block of text |
+| `j` / `↓` | Extend the selection down across multiple lines |
+| `Shift + i` | Insert text at the beginning of all selected lines |
+| `Esc` | Apply the inserted text to every selected line |
+
+**Example workflow**
+
+1. Press `Ctrl + v` to enter Visual Block mode.  
+2. Use `j` or `↓` to select multiple lines.  
+3. Press `Shift + i`.  
+4. Type a comment like `#` or `//`.  
+5. Press `Esc` → the text is inserted at the start of all selected lines.
+
 
 ## Search in File 
-### Search a word in command mode
-/pattern + Enter for search more word press n
-n > from up to down 
-shift + n > from down to up
-```bash 
-/word
-```
-## Search and Replace 
-### Search and Replce one word
-:s/pattren/replace word
-```bash
-:s/used/LINUX
-```
 
-### Search and Replce same words in one line
-:s/pattren/replace word/g
-```bash
-:s/used/LINUX/g
-```
-### Search and Replce same words in whole file
-:%s/pattren/replace word/g
-```bash
-:%s/used/LINUX/g
-```
+| Command | Description |
+|---------|-------------|
+| `:/word` | Search for a word from cursor downward |
+| `n`     | Repeat search (next match, downwards) |
+| `Shift + n` | Repeat search (previous match, upwards) |
 
-### Search and Replce same words in whole file
-:%s/pattren/replace word/gc c for ask you 
-```bash
-:%s/used/LINUX/gc
-```
-### Search and Replce same words in whole file
-:%s/pattren/replace word/gi i for disable case sensitive
-:%s/used/LINUX/gic for combination
-```bash
-:%s/used/LINUX/gi
-```
+---
+
+### Replace first occurrence of a word (in current line)
+
+| Command | Description |
+|---------|-------------|
+| `:s/pattern/replace` | Replace first match in current line |
+
+Example:  
+`:s/used/LINUX`
+
+---
+
+### Replace all occurrences in current line
+
+| Command | Description |
+|---------|-------------|
+| `:s/pattern/replace/g` | Replace all matches in the current line |
+
+Example:  
+`:s/used/LINUX/g`
+
+---
+
+### Replace all occurrences in the whole file
+
+| Command | Description |
+|---------|-------------|
+| `:%s/pattern/replace/g` | Replace all matches in the entire file |
+
+Example:  
+`:%s/used/LINUX/g`
+
+---
+
+### Replace all with confirmation
+
+| Command | Description |
+|---------|-------------|
+| `:%s/pattern/replace/gc` | Replace all matches with confirmation (c = confirm) |
+
+Example:  
+`:%s/used/LINUX/gc`
+
+---
+
+### Replace all (case‑insensitive)
+
+| Command | Description |
+|---------|-------------|
+| `:%s/pattern/replace/gi` | Replace all matches, ignore case |
+| `:%s/pattern/replace/gic` | Replace all, ignore case + confirm |
+
+Example:  
+`:%s/used/LINUX/gi`
+
+
+
 ## Save the file
 ###  just save
 command line enviroment 
