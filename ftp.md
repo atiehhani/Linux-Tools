@@ -1,39 +1,39 @@
 ## ftp command for connect to a ftp server
-```bash
-# Connect to FTP server
-ftp ftp.example.com
-# or with specific port
-ftp ftp.example.com 2121
 
-# Once connected, enter username and password
+Connect to FTP server  
+> `ftp ftp.example.com`  
+or with specific port  
+> `ftp ftp.example.com 2121`  
 
-# Navigate to desired directory
-cd /path/to/remote/directory
+Once connected, enter username and password  
 
-# List files to see what's available
-ls
+Navigate to desired directory  
+> `cd /path/to/remote/directory`  
 
-# Download a single file
-get filename.txt
+List files to see what's available  
+> `ls`  
 
-# Download multiple files
-mget *.txt
+Download a single file  
+> `get filename.txt`  
 
-# Download entire directory (must enable prompt first)
-prompt
-mget *
+Download multiple files  
+> `mget *.txt`  
 
-# Or use recursive download (if supported)
-recursive
-mget *
+Download entire directory (must enable prompt first)  
+> `prompt`  
+> `mget *`  
 
-# Exit
-bye
+Or use recursive download (if supported)  
+> `recursive`  
+> `mget *`  
 
-# Download all directories recursively
-wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/
+Exit  
+> `bye`
 
-# Or download specific directories
-wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/1404-08-06/
-wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/1404-08-10/
-```
+Download all directories recursively  
+> `wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/`  
+
+Or download specific directories  
+> `wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/1404-08-06/`  
+> `wget -r -np -nH --cut-dirs=1 ftp://username:password@ftp.example.com/1404-08-10/`  
+
